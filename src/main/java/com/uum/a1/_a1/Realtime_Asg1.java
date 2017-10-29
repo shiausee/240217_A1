@@ -22,9 +22,9 @@ public class Realtime_Asg1 {
         String absoluteFilePath = "";
         absoluteFilePath = workingDirectory + File.separator;
 
-        System.out.println("Final filepath : " + absoluteFilePath);
-
-        File dir = new File(absoluteFilePath);
+        System.out.println("Final filepath : " + absoluteFilePath.replace("\\", "/"));
+       
+        File dir = new File(absoluteFilePath.replace("\\", "/"));
 
         if (dir.createNewFile()) {
             System.out.println("File is created!");

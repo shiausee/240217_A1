@@ -51,12 +51,11 @@ public class findFilesTest {
         String workingDirectory = System.getProperty("user.dir");
         String absoluteFilePath = "";
         absoluteFilePath = workingDirectory + File.separator;
-        File dir = new File(absoluteFilePath);
+        File dir = new File(absoluteFilePath.replace("\\", "/"));
         int result = (findFiles.getFilesCount(dir))-3;
-        int expResult = 17;
+        int expResult = 44;
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -64,9 +63,12 @@ public class findFilesTest {
      */
     @Test
     public void testDirectory() throws Exception {
+        
         System.out.println("number of issue");
-        String workingDirectory = System.getProperty("user.dir");
-        File dir = new File(workingDirectory);
+       String workingDirectory = System.getProperty("user.dir");
+        String absoluteFilePath = "";
+        absoluteFilePath = workingDirectory + File.separator;
+        File dir = new File(absoluteFilePath.replace("\\", "/"));
         int expResult = 3;
         int result = findFiles.directory(dir);
         assertEquals(expResult, result);
