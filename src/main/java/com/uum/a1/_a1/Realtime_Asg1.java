@@ -6,11 +6,8 @@
 //Name : Lim Shiau See
 package com.uum.a1._a1;
 
-import static com.uum.a1._a1.findFiles.numIssue;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 
 public class Realtime_Asg1 {
@@ -22,15 +19,16 @@ public class Realtime_Asg1 {
         String absoluteFilePath = "";
         absoluteFilePath = workingDirectory + File.separator;
 
-        System.out.println("Final filepath : " + absoluteFilePath.replace("\\", "/"));
-       
+        System.out.println("Final filepath : " + absoluteFilePath);
+
         File dir = new File(absoluteFilePath.replace("\\", "/"));
 
         if (dir.createNewFile()) {
             System.out.println("File is created!");
         } else {
             System.out.println("File is already existed!");
-        }        findFiles fFile = new findFiles();
+        }
+        findFiles fFile = new findFiles();
         int fileCount = fFile.getFilesCount(dir);
         System.out.println("File Count:" + fileCount);
         int numI = fFile.directory(dir);// because it main class contain "public static void main" it not a issue
